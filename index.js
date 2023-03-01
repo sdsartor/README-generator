@@ -44,7 +44,7 @@ message: 'Enter your description of the project here:'
 },
 ]
 // This is what applies the data to a newly formed README page and allows for the code to be structured under the code. 
-function writetoFile(README, data) {
+function writenewFile(README, data) {
 // fs is necessary to set up the file to be created and README is the 
 fs.writeFile(README, data, function(err) {
    console.log(README)
@@ -62,7 +62,7 @@ console.log('Way to go, your README file is being generated!')
 function init() {
     inquirer.prompt(questions)
     .then(function(data) {
-        writetoFile("README.md", generatingMarkdown(data));
+        writenewFile("README.md", generatingMarkdown(data));
         console.log(data)
     })
 }
